@@ -1,0 +1,18 @@
+type Word @model
+@key(name: "ByCollectionIdWord",
+  fields: ["collectionID", "myCreatedAt"],
+  queryField: "selectByOwnerCollectionId")
+@key(name: "ByCollectionOwnerWord",
+  fields: ["owner", "myCreatedAt"],
+  queryField: "selectByOwnerCollectionWord")
+{
+  id: ID!
+  en: String!
+  ru: String
+  statusLearn: Boolean
+  isAddInWorkout: Boolean
+  collectionID: String!
+  owner: String!
+  myCreatedAt:String!
+  myUpdatedAt:String!
+}
